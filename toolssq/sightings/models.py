@@ -186,4 +186,4 @@ class Squirrel_attr(models.Model):
                 max_length = 40,
                 choices= TF_CHOICES,
                 null = True,
-    ）
+    )
