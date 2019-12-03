@@ -1,9 +1,14 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+from .models import Squirrel_attr
 
-# def index(request):
-#     return HttpResponse("Hello, world. You're at the polls index.")
+def all_squirrel(request):
+    squirrels= Squirrel_attr.objects.all()
+    context = {
+            ' squirrels ': squirrels,
+    }
+    return render(request, 'sightings/all.html', context)
 
-# Create your views here.
+def squirrel_details(request, Squirrel_ID):
+    squirrel = Squirrel_attr.objects.get(id= Squirrel_ID)
+    return HttpResponse(f"Hi, I'm Squirrel { Squirrel_ID }")
