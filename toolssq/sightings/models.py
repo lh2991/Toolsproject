@@ -3,12 +3,12 @@ from django.db import models
 class Squirrel_attr(models.Model):
 
     Lattitude = models.FloatField(
-    help_text=_('Latitude of Squirrel'),
+    help_text=('Latitude of Squirrel'),
     max_length = 40,
     )
 
     Longitude = models.FloatField(
-    help_text=_('Longitude of Squirrel'),
+    help_text=('Longitude of Squirrel'),
     max_length = 40,
     )
 
@@ -31,7 +31,7 @@ class Squirrel_attr(models.Model):
     )
 
     Date = models.DateField(
-                help_text=_('Date spotted'),
+                help_text=('Date spotted'),
     )
 
     ADULT = 'Adult'
