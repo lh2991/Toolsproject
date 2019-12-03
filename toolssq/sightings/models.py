@@ -86,34 +86,104 @@ class Squirrel_attr(models.Model):
                 blank = True,
                 null = True,
     )
-
-    Running = models.BinaryField(null = True)
-
-    Chasing = models.BinaryField(null = True)
-
-    Climbing = models.BinaryField(null = True)
-
-    Eating = models.BinaryField(null = True)
-
-    Foraging = models.BinaryField(null = True)
-
-    Other_Activities = models.TextField(blank = True)
-
-    Kuks = models.BinaryField(null = True)
-
-    Quaas = models.BinaryField(null = True)
-
-    Moans = models.BinaryField(
-                    default = False,
-                    null = True,
+    TRUE = 'True'
+    FALSE = 'False'
+    TF_CHOICES = (
+        (TRUE,'True'),
+        (FALSE,'False'),
+    )
+    Running = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
     )
 
-    Tail_flags = models.BinaryField(null = True)
+    Chasing = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
 
-    Tail_twitches = models.BinaryField(null = True)
 
-    Approaches = models.BinaryField(null = True)
+    Climbing = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
 
-    Indifferent = models.BinaryField(null = True)
 
-    Runs_from = models.BinaryField(null = True)
+    Eating = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Foraging = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Other_Activities = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Kuks = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Quaas = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Moans = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Tail_flags = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Tail_twitches = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Approaches = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Indifferent = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    )
+
+
+    Runs_from = models.CharField(
+                max_length = 40,
+                choices= TF_CHOICES,
+                null = True,
+    ）
