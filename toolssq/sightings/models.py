@@ -2,21 +2,21 @@ from django.db import models
 
 class Squirrel_attr(models.Model):
 
-    Lattitude = models.IntegerField(
-    #max_value=,
-    #min_value=,
+    Lattitude = models.FloatField(
     help_text=_('Latitude of Squirrel'),
+    max_length = 40,
     )
 
-    Longitude = models.IntegerField(
-    #max_value=,
-    #min_value=,
+    Longitude = models.FloatField(
     help_text=_('Longitude of Squirrel'),
+    max_length = 40,
     )
 
     Squirrel_ID = models.CharField(
-    max_length = 13,
-    ) #not completed yet!!!!
+    max_length = 20,
+    unique = True,
+    primary_key=True,
+    )
 
     AM = 'AM'
     PM = 'PM'
@@ -27,87 +27,93 @@ class Squirrel_attr(models.Model):
     Shift = models.CharField(
                 max_length = 4,
                 choices= Shift_CHOICES,
-                default = AM
+                default = AM,
     )
 
     Date = models.DateField(
                 help_text=_('Date spotted'),
-                )  #How to convert to existing dataform
+    )
 
     ADULT = 'Adult'
     JUVENILE = 'Juvenile'
-    BLANK = ' '
-    UNKNOWN = '?'
+    BLANK = ''
     Age_CHOICES =(
             (ADULT,'Adult'),
             (JUVENILE,'Juvenile'),
-            (BLANK,' '),
-            (UNKNOWN,'?'), #how to deal with blank and ?
+            (BLANK,''),
     )
     Age = models.CharField(
                 max_length = 16,
                 choices= Age_CHOICES,
-                default = BLANK
+                blank = True,
+                null=True,
     )
 
     BLACK ='Black'
     GRAY = 'Gray'
     CINNAMON = 'Cinnamon'
-    BLANK = ' '
+    BLANK = ''
     Primary_Fur_Color_CHOICES =(
         (BLACK,'Black'),
         (GRAY,'Gray'),
         (CINNAMON,'Cinnamon'),
-        (BLANK,' '), #how to deal with blank and ?
+        (BLANK,''),
     )
     Primary_Fur_Color = models.CharField(
                 max_length = 16,
                 choices= Primary_Fur_Color_CHOICES,
-                default = BLANK
+                blank= True,
+                null = True,
     )
 
     ABOVE = 'Above Ground'
     PLANE = 'Ground Plane'
-    BLANK = ' '
+    BLANK = ''
     Location_CHOICES =(
         (ABOVE,'Above Ground'),
         (PLANE,'Ground Plane'),
-        (BLANK,' '),#how to deal with blank and ?
+        (BLANK,''),
     )
     Location = models.CharField(
-                max_length = 20,
+                max_length = 40,
                 choices= Location_CHOICES,
-                default = BLANK
+                blank = True,
+                null = True,
     )
 
-    Specific_Location = models.TextField(blank = True)
-    #is this the right way?
-    Running = models.BinaryField()
+    Specific_Location = models.CharField(
+                max_length = 100,
+                blank = True,
+                null = True,
+    )
 
-    Chasing = models.BinaryField()
+    Running = models.BinaryField(null = True)
 
-    Climbing = models.BinaryField()
+    Chasing = models.BinaryField(null = True)
 
-    Eating = models.BinaryField()
+    Climbing = models.BinaryField(null = True)
 
-    Foraging = models.BinaryField()
+    Eating = models.BinaryField(null = True)
+
+    Foraging = models.BinaryField(null = True)
 
     Other_Activities = models.TextField(blank = True)
 
-    Kuks = models.BinaryField()
+    Kuks = models.BinaryField(null = True)
 
-    Quaas = models.BinaryField()
+    Quaas = models.BinaryField(null = True)
 
     Moans = models.BinaryField(
-                default = False
+                    default = False,
+                    null = True,
     )
 
-    Tail_flags = models.BinaryField()
+    Tail_flags = models.BinaryField(null = True)
 
-    Tail_twitches = models.BinaryField()
+    Tail_twitches = models.BinaryField(null = True)
 
-    Approaches = models.BinaryField()
+    Approaches = models.BinaryField(null = True)
 
-    Indifferent = models.BinaryField()
+    Indifferent = models.BinaryField(null = True)
 
-    Runs_from = models.BinaryField()
+    Runs_from = models.BinaryField(null = True)
