@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <h1>You are looking at squirrel {{ squirrels.Squirrel_ID }}</h1>
+  </header>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
