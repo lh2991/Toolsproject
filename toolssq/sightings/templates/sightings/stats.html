@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Squirrels Statistics</h2>
+
+<table>
+  <tr>
+    <th>Statistics</th>
+    <th>Values</th>
+  </tr>
+  <tr>
+    <td>Total number of squirrels</td>
+    <td>{{ age }}</td>
+  </tr>
+  <tr>
+    <td>Total number of squirrels (Shift = AM)</td>
+    <td>{{ am }}</td>
+  </tr>
+  <tr>
+    <td>Total number of squirrels (Shift = PM)</td>
+    <td>{{ pm }}</td>
+  </tr>
+  <tr>
+    <td>Total number of squirrels (age = ADULT)</td>
+    <td>{{ ADULT }}</td>
+  </tr>
+  <tr>
+    <td>Total number of squirrels (age = JUVENILE)</td>
+    <td>{{ JUVENILE }}</td>
+  </tr>
+  <tr>
+    <td>Total number of squirrels (Primary fur color = Black)</td>
+    <td>{{ color_black }}</td>
+  </tr>
+  <tr>
+    <td>Total number of squirrels (Primary fur color = Gray)</td>
+    <td>{{ color_gray }}</td>
+  </tr>
+  <tr>
+    <td>Total number of squirrels (Primary fur color = Cinnamon)</td>
+    <td>{{ color_cinnamon }}</td>
+  </tr>
+  <tr>
+    <td>Average lattitude</td>
+    <td>{{ lattitude }}</td>
+  </tr>
+  <tr>
+    <td>Average longitude</td>
+    <td>{{ longitude }}</td>
+  </tr>
+  <!-- <tr>
+    <td>Eating True</td>
+    <td>{{ eat_t }}</td>
+  </tr>
+  <tr>
+    <td>Eating False</td>
+    <td>{{ eat_f }}</td>
+  </tr> -->
+
+</table>
+
+</body>
+</html>
+
+
+
+<!--
+#list form -->
+<!-- <h1>Check out these statistics of squirrels!</h1> -->
+<!-- <ul>
+   <li>Total no of squirrels : {{ age }}</li>
+   <li>{{ ADULT }}</li>
+   <li>{{ JUVENILE }}</li>
+   <li>{{ lattitude }}</li>
+   <li>{{ longitude }}</li>
+</ul> -->
