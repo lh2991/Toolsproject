@@ -76,3 +76,8 @@ def stats(request):
             # 'eat_f': eat_f,
     }
     return render(request, 'sightings/stats.html', context)
+
+def map(request):
+    sightings= Squirrel_attr.objects.all()[:250]
+    context = {'sightings':sightings}
+    return render(request, 'sightings/map.html', context)
