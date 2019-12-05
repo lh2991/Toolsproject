@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 
+from django.db.models import Avg, Max, Min, Q
+
 from .forms import SquirrelForm
 from .models import Squirrel_attr
 
@@ -11,15 +13,6 @@ def all_squirrel(request):
             'squirrels': squirrels,
     }
     return render(request, 'sightings/all.html', context)
-
-# def squirrel_details(request,squirrel_id):
-#     squirrels=get_object_or_404(Squirrel_attr,pk = squirrel_id)
-#     form = SquirrelForm(instance = squirrels)
-#     context = {
-#             'squirrels':squirrels,
-#             'form':form
-#     }
-#     return render(request,'sightings/detail.html',context)
 
 def squirrel_details(request,squirrel_id):
     squirrels=get_object_or_404(Squirrel_attr,pk = squirrel_id)
@@ -49,4 +42,37 @@ def add_squirrel(request):
     }
     return render(request,'sightings/add.html',context)
 
-# request.POST or None,
+def stats(request):
+    squirrels= Squirrel_attr.objects.all()
+    age = len(squirrels)
+
+    am= len(Squirrel_attr.objects.exclude(Shift='PM'))
+    pm= len(Squirrel_attr.objects.exclude(Shift='AM'))
+
+    ADULT= len(Squirrel_attr.objects.exclude(Age='').exclude(Age='Juvenile'))
+    JUVENILE = len(Squirrel_attr.objects.exclude(Age='').exclude(Age='Adult'))
+
+    color_black= len(Squirrel_attr.objects.exclude(Primary_Fur_Color='').exclude(Primary_Fur_Color='Gray').exclude(Primary_Fur_Color='Cinnamon'))
+    color_gray= len(Squirrel_attr.objects.exclude(Primary_Fur_Color='').exclude(Primary_Fur_Color='Black').exclude(Primary_Fur_Color='Cinnamon'))
+    color_cinnamon= len(Squirrel_attr.objects.exclude(Primary_Fur_Color='').exclude(Primary_Fur_Color='Gray').exclude(Primary_Fur_Color='Black'))
+
+    lattitude = Squirrel_attr.objects.all().aggregate(Avg('Lattitude'))
+    longitude = Squirrel_attr.objects.all().aggregate(Avg('Longitude'))
+
+    # eat_t = len(Squirrel_attr.objects.exclude(Eating='False'))
+    # eat_f = len(Squirrel_attr.objects.exclude(Eating='True'))
+    context = {
+            'age': age,
+            'am': am,
+            'pm': pm,
+            'ADULT': ADULT,
+            'JUVENILE': JUVENILE,
+            'color_black': color_black,
+            'color_gray': color_gray,
+            'color_cinnamon': color_cinnamon,
+            'lattitude': lattitude,
+            'longitude': longitude,
+            # 'eat_t': eat_t,
+            # 'eat_f': eat_f,
+    }
+    return render(request, 'sightings/stats.html', context)
