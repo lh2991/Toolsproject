@@ -86,11 +86,12 @@ class Squirrel_attr(models.Model):
                 blank = True,
                 null = True,
     )
-    TRUE = 'True'
-    FALSE = 'False'
+    TRUE = 'TRUE'
+    FALSE = 'FALSE'
     TF_CHOICES = (
-        (TRUE,'True'),
-        (FALSE,'False'),
+        (TRUE,'TRUE'),
+        (FALSE,'FALSE'),
+        (BLANK,''),
     )
     Running = models.CharField(
                 max_length = 40,
@@ -133,9 +134,7 @@ class Squirrel_attr(models.Model):
 
     Other_Activities = models.CharField(
                 max_length = 40,
-                choices= TF_CHOICES,
                 null = True,
-                default = TRUE,
     )
 
 
