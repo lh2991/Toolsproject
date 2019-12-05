@@ -35,19 +35,18 @@ def squirrel_details(request,squirrel_id):
             'form':form
     }
     return render(request,'sightings/detail.html',context)
-#
-# def add_squirrel(request):
-#     if request.method == 'POST':
-#         form = SquirrelForm(request.POST,instance = squirrels)
-#         if form.is_valid():
-#             form.save()
-#             return redirect(f'/sightings/{squirrel_id}')
-#     else:
-#         form = SquirrelForm()
-#     context = {
-#             'squirrels':squirrels,
-#             'form':form
-#     }
-#     return render(request,'sightings/detail.html',context)
+
+def add_squirrel(request):
+    if request.method == 'POST':
+        form = SquirrelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(f'/sightings')
+    else:
+        form = SquirrelForm()
+    context = {
+            'form':form
+    }
+    return render(request,'sightings/add.html',context)
 
 # request.POST or None,
