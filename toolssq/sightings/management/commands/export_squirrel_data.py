@@ -10,7 +10,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('csv_file', nargs='+', type=str)
 
-    def handele(self,*args, **options):
+    def handle(self,*args, **options):
         path = str(options['csv_file'][0])
         writer = csv.writer (open(path,'w'))
         headers = []
@@ -18,8 +18,8 @@ class Command(BaseCommand):
             headers.append(field.name)
         writer.writerow(headers)
 
-        data = Squirrel_attr.objects.all()
-        for data in data:
+        final_data = Squirrel_attr.objects.all()
+        for data in final_data:
             writer.writerow([data.longitude,
                             data.Latitude,
                             data.Squirrel_ID,
