@@ -135,6 +135,7 @@ class Squirrel_attr(models.Model):
     Other_Activities = models.CharField(
                 max_length = 40,
                 null = True,
+                blank = True,
     )
 
 

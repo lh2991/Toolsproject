@@ -32,6 +32,7 @@ class Command(BaseCommand):
                     'Quaas',
                     'Moans',
                     'Tail flags',
+                    'Tail twitches'
                     'Approaches',
                     'Indifferent',
                     'Runs from',
