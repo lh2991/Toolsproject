@@ -7,41 +7,37 @@ import sys
 
 def import_(path):
     with open(path) as csv_file:
-        readCSV = csv.reader(csv_file, delimiter=',')
-        type(readCSV)
-        data = []
-        for thing in readCSV:
-            data.append(thing)
-    data = data[1:]
+        reader = csv.DictReader(csv_file)
+        data = list(reader)
     for rows in data:
         try:
             squirrel = Squirrel_attr()
-            squirrel.Longitude = rows[0]
-            squirrel.Lattitude = rows[1]
-            squirrel.Squirrel_ID = rows[2]
-            squirrel.Shift = rows[4]
-            squirrel.Date = datetime.datetime.strptime(rows[5],'%m%d%Y')
-            if rows[7] != '?':
-                squirrel.Age = rows[7]
+            squirrel.Longitude = float(rows['X'])
+            squirrel.Lattitude = float(rows['Y'])
+            squirrel.Squirrel_ID = rows['Unique Squirrel ID']
+            squirrel.Shift = rows['Shift']
+            squirrel.Date = datetime.datetime.strptime(rows['Date'],'%m%d%Y')
+            if rows['Age'] != '?':
+                squirrel.Age = rows['Age']
             else:
                 pass
-            squirrel.Primary_Fur_Color = rows[8]
-            squirrel.Location = rows[12]
-            squirrel.Specific_Location = rows[14]
-            squirrel.Running = rows[15]
-            squirrel.Chasing = rows[16]
-            squirrel.Climbing = rows[17]
-            squirrel.Eating = rows[18]
-            squirrel.Foraging = rows[19]
-            squirrel.Other_Activities =rows[20]
-            squirrel.Kuks = rows[21]
-            squirrel.Quaas = rows[22]
-            squirrel.Moans = rows[23]
-            squirrel.Tail_flags = rows[24]
-            squirrel.Tail_twitches = rows[25]
-            squirrel.Approaches = rows[26]
-            squirrel.Indifferent = rows[27]
-            squirrel.Runs_from = rows[28]
+            squirrel.Primary_Fur_Color = rows['Primary Fur Color']
+            squirrel.Location = rows['Location']
+            squirrel.Specific_Location = rows['Specific Location']
+            squirrel.Running = rows['Running']
+            squirrel.Chasing = rows['Chasing']
+            squirrel.Climbing = rows['Climbing']
+            squirrel.Eating = rows['Eating']
+            squirrel.Foraging = rows['Foraging']
+            squirrel.Other_Activities =rows['Other Activities']
+            squirrel.Kuks = rows['Kuks']
+            squirrel.Quaas = rows['Quaas']
+            squirrel.Moans = rows['Moans']
+            squirrel.Tail_flags = rows['Tail flags']
+            squirrel.Tail_twitches = rows['Tail twitches']
+            squirrel.Approaches = rows['Approaches']
+            squirrel.Indifferent = rows['Indifferent']
+            squirrel.Runs_from = rows['Runs from']
             squirrel.save()
         except:
             pass
