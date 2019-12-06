@@ -44,7 +44,7 @@ def add_squirrel(request):
 
 def stats(request):
     squirrels= Squirrel_attr.objects.all()
-    age = len(squirrels)
+    count = len(squirrels)
 
     am= len(Squirrel_attr.objects.exclude(Shift='PM'))
     pm= len(Squirrel_attr.objects.exclude(Shift='AM'))
@@ -56,13 +56,13 @@ def stats(request):
     color_gray= len(Squirrel_attr.objects.exclude(Primary_Fur_Color='').exclude(Primary_Fur_Color='Black').exclude(Primary_Fur_Color='Cinnamon'))
     color_cinnamon= len(Squirrel_attr.objects.exclude(Primary_Fur_Color='').exclude(Primary_Fur_Color='Gray').exclude(Primary_Fur_Color='Black'))
 
-    lattitude = Squirrel_attr.objects.all().aggregate(Avg('Lattitude'))
-    longitude = Squirrel_attr.objects.all().aggregate(Avg('Longitude'))
+    lattitude = list(Squirrel_attr.objects.all().aggregate(Avg('Lattitude')).values())[0]
+    longitude = list(Squirrel_attr.objects.all().aggregate(Avg('Longitude')).values())[0]
 
     # eat_t = len(Squirrel_attr.objects.exclude(Eating='False'))
     # eat_f = len(Squirrel_attr.objects.exclude(Eating='True'))
     context = {
-            'age': age,
+            'count': count,
             'am': am,
             'pm': pm,
             'ADULT': ADULT,
