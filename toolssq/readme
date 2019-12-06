@@ -1,0 +1,17 @@
+Project description:
+  This project creates a website using Django based on
+  2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv datafile.
+  The data is imported into the website using management command import_squirrel_data.py.
+  Functions of this website includes viewing all squirrel attributes, adding
+  new records to the existing database, editing existing records, viewing key
+  statistics of the database and view all squirrel locations on a map.
+  The database can also be exported to local csvfile using the management Command
+  export_squirrel_data. The exported data can also be reimported if necessary.
+
+Group name and section:
+  Squirrel Hunter, Section 1
+
+UNI list:
+  UNIs: [yy3007, lh2991]
+
+Link to the server running application:
