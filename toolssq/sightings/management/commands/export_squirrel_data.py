@@ -13,9 +13,30 @@ class Command(BaseCommand):
     def handle(self,*args, **options):
         path = str(options['csv_file'][0])
         writer = csv.writer (open(path,'w'))
-        headers = []
-        for field in Squirrel_attr._meta.fields:
-            headers.append(field.name)
+        headers = ['X',
+                    'Y',
+                    'Unique Squirrel ID',
+                    'Shift',
+                    'Date',
+                    'Age',
+                    'Primary Fur Color',
+                    'Location',
+                    'Specific Location',
+                    'Running',
+                    'Chasing',
+                    'Climbing',
+                    'Eating',
+                    'Foraging',
+                    'Other Activities',
+                    'Kuks',
+                    'Quaas',
+                    'Moans',
+                    'Tail flags',
+                    'Approaches',
+                    'Indifferent',
+                    'Runs from',
+                    ]
+
         writer.writerow(headers)
 
         data = Squirrel_attr.objects.all()
@@ -24,7 +45,7 @@ class Command(BaseCommand):
                             squirrel.Lattitude,
                             squirrel.Squirrel_ID,
                             squirrel.Shift,
-                            squirrel.Date,
+                            squirrel.Date.strftime('%m%d%Y'),
                             squirrel.Age,
                             squirrel.Primary_Fur_Color,
                             squirrel.Location,
@@ -44,27 +65,3 @@ class Command(BaseCommand):
                             squirrel.Indifferent,
                             squirrel.Runs_from,
                             ])
-        # headers = ['longitude',
-        #         'Latitude',
-        #         'Unique Squirrel ID',
-        #         'Shift',
-        #         'Date',
-        #         'Age',
-        #         'Primary Fur Color',
-        #         'Location',
-        #         'Specific Location',
-        #         'Running',
-        #         'Chasing',
-        #         'Climbing',
-        #         'Eating',
-        #         'Foraging',
-        #         'Other Activities',
-        #         'Kuks',
-        #         'Quaas',
-        #         'Moans',
-        #         'Tail flags',
-        #         'Tail twitches',
-        #         'Approaches',
-        #         'Indifferent',
-        #         'Runs from',
-        #     ]
