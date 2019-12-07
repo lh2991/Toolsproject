@@ -44,7 +44,8 @@ Project description:
         4. A view with general stats about the sightings
         Located at: ​/sightings/stats
         Here users can see stats about the current squirrel population!
-      
+
+** Reference: Homepage template inspired by https://www.w3schools.com/w3css/w3css_templates.asp
 
 Group name and section:
   Squirrel Hunter, Section 1
