@@ -31,7 +31,7 @@ class Squirrel_attr(models.Model):
     )
 
     Date = models.DateField(
-                help_text=('Date spotted'),
+                help_text=('Format:yyyy-mm-dd'),
     )
 
     ADULT = 'Adult'
