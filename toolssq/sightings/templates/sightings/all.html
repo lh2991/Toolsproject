@@ -1,4 +1,59 @@
 <!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://reveriechaser.com/wp-content/uploads/2015/07/squirrel-central-park-usa-new-york-nyc.jpg");
+  min-height: 75%;
+}
+</style>
+
+<body>
+
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s3">
+        <a href="add" class="w3-button w3-block w3-black">Add</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="stats" class="w3-button w3-block w3-black">Stats</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/map" class="w3-button w3-block w3-black">Map</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-middle w3-center">
+      <span class="w3-text-white" style="font-size:90px">Check out these squirrels!</span>
+    </div>
+  </header>
+
+  <ul>
+   {% for squirrel in squirrels %}
+     <!-- <li>{{ squirrel.Squirrel_ID }}</li> -->
+     <li><a href="{{ squirrel.Squirrel_ID }}/"> {{ squirrel.Squirrel_ID }}</a></li>
+   {% endfor %}
+  </ul>
+
+</body>
+
+
+
+
+<!--
+<!DOCTYPE html>
 <html lang="en">
 <header>
     <h1>Check out these squirrels!</h1>
@@ -9,7 +64,7 @@
   </header>
 <ul>
  {% for squirrel in squirrels %}
-   <!-- <li>{{ squirrel.Squirrel_ID }}</li> -->
-   <li><a href="{{ squirrel.Squirrel_ID }}/"> {{ squirrel.Squirrel_ID }}</a></li>
+   <li>{{ squirrel.Squirrel_ID }}</li> -->
+   <!-- <li><a href="{{ squirrel.Squirrel_ID }}/"> {{ squirrel.Squirrel_ID }}</a></li>
  {% endfor %}
-</ul>
+</ul> -->
