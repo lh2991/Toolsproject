@@ -24,23 +24,29 @@ We have in total 4 different views in this application!
 1. A view that shows a map which displays the location of the squirrel sightings on an OpenStreets map​.
 
 Located at: ​/map
+
 This view allows users to see squirrel locations on a map!
+
 In the codes we plotted 250 but could be changed easily
 
 2. A view that lists all squirrel sightings
 
 Located at: ​/sightings
+
 When click into it:  /sightings/unique-squirrel-id
+
 When user clicks into the a squirrel, not only can she view its detailed information, but she can also edit attribute for that squirrel!
 
 3. A view to create a new sighting
 
 Located at: ​/sightings/add
+
 When our user spots a new squirrel, she can add her observation in here!
 
 4. A view with general stats about the sightings
 
 Located at: ​/sightings/stats
+
 Here users can see stats about the current squirrel population!
 
 
