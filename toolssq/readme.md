@@ -1,19 +1,22 @@
 Project description:
-  What is it?:
+
+What is it?:
     This project creates a website using Django based on 2018_Central_Park_Squirrel_Census_Squirrel_Data.csv datafile.It keeps track of the record of all known squirrels spotted in Central Park. Besides viewing the spotted locations of known squirrels, this application also allows users to import the data add and update squirrel data when they made new discoveries. Moreover, users can see some general stats of the squirrels population and know
     more about our lovely little friends.
 
-  Main Features:
-    Import:
+Main Features:
+
+Import:
       The data is imported into the website using management command import_squirrel_data.py.
       Data is imported from local environment with the command
       $ python manage.py import_squirrel_data /path/to/name of file.csv in the command line.
-    Export:
+
+Export:
       We welcome you to download our current data base from our website for further analysis! To export data from this application, simply type in $ python manage.py export_squirrel_data /path/to/name of file.csv
       With the management command we incorporated in our application, this command would allow you to download the dataset and study it in your free time!
       The exported data can also be reimported if necessary.
 
-    Views:
+Views:
       We have in total 4 different views in this application!
         1. A view that shows a map which displays the location of the squirrel sightings on an OpenStreets map​.
         Located at: ​/map
