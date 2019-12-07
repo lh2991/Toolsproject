@@ -13,6 +13,7 @@ class Squirrel_attr(models.Model):
     )
 
     Squirrel_ID = models.CharField(
+    help_text = ('Enter in form hectare_ID-shift-HHMM-number'),
     max_length = 20,
     unique = True,
     primary_key=True,
