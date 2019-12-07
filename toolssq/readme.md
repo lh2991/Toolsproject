@@ -7,31 +7,34 @@ This project creates a website using Django based on 2018_Central_Park_Squirrel_
 Main Features:
 
 Import:
-      The data is imported into the website using management command import_squirrel_data.py.
-      Data is imported from local environment with the command
-      $ python manage.py import_squirrel_data /path/to/name of file.csv in the command line.
+
+The data is imported into the website using management command import_squirrel_data.py.
+Data is imported from local environment with the command
+$ python manage.py import_squirrel_data /path/to/name of file.csv in the command line.
 
 Export:
-      We welcome you to download our current data base from our website for further analysis! To export data from this application, simply type in $ python manage.py export_squirrel_data /path/to/name of file.csv
-      With the management command we incorporated in our application, this command would allow you to download the dataset and study it in your free time!
-      The exported data can also be reimported if necessary.
+
+We welcome you to download our current data base from our website for further analysis! To export data from this application, simply type in $ python manage.py export_squirrel_data /path/to/name of file.csv
+With the management command we incorporated in our application, this command would allow you to download the dataset and study it in your free time!
+The exported data can also be reimported if necessary.
 
 Views:
-      We have in total 4 different views in this application!
-      1. A view that shows a map which displays the location of the squirrel sightings on an OpenStreets map​.
-        Located at: ​/map
-        This view allows users to see squirrel locations on a map!In the codes
-        we plotted 250 but could be changed easily
-      2. A view that lists all squirrel sightings
-        Located at: ​/sightings
-        When click into it:  /sightings/<unique-squirrel-id>
-        Here when user clicks into the a squirrel, not only can she view its detailed information, but she can also edit attribute for that squirrel!
-      3. A view to create a new sighting
-        Located at: ​/sightings/add
-        When our user spots a new squirrel, she can add her observation in here!
-      4. A view with general stats about the sightings
-        Located at: ​/sightings/stats
-        Here users can see stats about the current squirrel population!
+
+We have in total 4 different views in this application!
+1. A view that shows a map which displays the location of the squirrel sightings on an OpenStreets map​.
+Located at: ​/map
+This view allows users to see squirrel locations on a map!
+In the codes we plotted 250 but could be changed easily
+2. A view that lists all squirrel sightings
+Located at: ​/sightings
+When click into it:  /sightings/<unique-squirrel-id>
+Here when user clicks into the a squirrel, not only can she view its detailed information, but she can also edit attribute for that squirrel!
+3. A view to create a new sighting
+Located at: ​/sightings/add
+When our user spots a new squirrel, she can add her observation in here!
+4. A view with general stats about the sightings
+Located at: ​/sightings/stats
+Here users can see stats about the current squirrel population!
 
 ** Reference: Homepage template inspired by https://www.w3schools.com/w3css/w3css_templates.asp
 
