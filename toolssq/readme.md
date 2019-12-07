@@ -1,6 +1,6 @@
 Project description:
 
-What is it?:
+What is it:
     This project creates a website using Django based on 2018_Central_Park_Squirrel_Census_Squirrel_Data.csv datafile.It keeps track of the record of all known squirrels spotted in Central Park. Besides viewing the spotted locations of known squirrels, this application also allows users to import the data add and update squirrel data when they made new discoveries. Moreover, users can see some general stats of the squirrels population and know
     more about our lovely little friends.
 
